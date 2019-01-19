@@ -10,10 +10,10 @@
         "default": "t2.micro"
       },
       "sec_group": {
-        "default": "SSH-22"
+        "default": "YOUR-SSH-SEC-GROUP"
       },
       "key_name": {
-        "default": "leonux"
+        "default": "YOUR-KEY-NAME"
       },
       "ami_id": {
         "type": "map",
