@@ -1,0 +1,10 @@
+{
+  "output": {
+      "EC2 Instance IP": {
+          "value": "${aws_instance.myNode.public_ip}"
+        },
+      "EC2 Instance id": {
+          "value": "${aws_instance.myNode.id}"
+        }
+    }
+}
