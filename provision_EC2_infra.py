@@ -62,12 +62,14 @@ if __name__ == '__main__':
     for a in args.__dict__:
         print(str(a) + ": " + str(args.__dict__[a]))
 
-    # Run functions and script logic.
+    # Run functions and script logic:
     updateJsonTemplates(args.awsInstanceType, args.region)
 
+    # Remove unwanted characters from templates.
     os.system("head -c -1 < out_tfvariables.json | tail -c +2 > ./terraform/variables.tf.json")
     os.system("head -c -1 < out_tftemplate.json | tail -c +2 > ./terraform/template.tf.json")
 
+    # Delete temp files.
     os.remove("out_tfvariables.json")
     os.remove("out_tftemplate.json")
 
