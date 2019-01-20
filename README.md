@@ -27,7 +27,10 @@ The script will create an EC2 instance (using Terraform) in the specified AWS Re
 
 > python, Boto3 library, AWS CLI, Linux environment, Terraform.
 
-## Installation
+## Installation via Git
+
+- Create a Fork of this repo.
+- Run the following commands in a Linux shell:
 
 ```bash
 $ git clone git@github.com:leonux123/devops-challenge-aws-python-tf.git
