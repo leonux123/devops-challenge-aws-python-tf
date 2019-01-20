@@ -33,7 +33,7 @@ The script will create an EC2 instance (using Terraform) in the specified AWS Re
 - Run the following commands in a Linux shell:
 
 ```bash
-$ git clone git@github.com:leonux123/devops-challenge-aws-python-tf.git
+$ git clone git@github.com:YOUR-GITHUB-USER-NAME/devops-challenge-aws-python-tf.git
 $ cd devops-challenge-aws-python-tf/
 $ chmod +x provision_EC2_infra.py
 $ ./provision_EC2_infra.py -h
