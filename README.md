@@ -27,6 +27,15 @@ The script will create an EC2 instance (using Terraform) in the specified AWS Re
 
 > python, Boto3 library, AWS CLI, Linux environment, Terraform.
 
+## Installation
+
+```bash
+$ git clone git@github.com:leonux123/devops-challenge-aws-python-tf.git
+$ cd devops-challenge-aws-python-tf/
+$ chmod +x provision_EC2_infra.py
+$ ./provision_EC2_infra.py -h
+```
+
 ## Script config
 
 An initial script configuration is required in order to set your AWS account credentials+EC2 info. Please edit the following files accordingly:
@@ -49,15 +58,6 @@ An initial script configuration is required in order to set your AWS account cre
 }
 ```
 Once the above files are updated with your AWS account credentials+EC2 info, you're ready to run the script.
-
-## Installation
-
-```bash
-$ git clone git@github.com:leonux123/devops-challenge-aws-python-tf.git
-$ cd devops-challenge-aws-python-tf/
-$ chmod +x provision_EC2_infra.py
-$ ./provision_EC2_infra.py -h
-```
 
 ## Usage
 
