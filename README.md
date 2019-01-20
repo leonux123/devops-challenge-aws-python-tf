@@ -94,7 +94,7 @@ Note: Only Free tier instance types are allowed: **t1.micro**, **t2.micro**.
 - The script will also display to the terminal the public IP address of the new created EC2 instance via Terraform output. You can SSH to that IP address and validate that "cowsay" was installed during launch process.
 ```
 $ ssh -i "YOUR-KEY-NAME.pem" ec2-user@PUBLIC-IP-ADDRESS
-$ cowsay HELLO!
+[ec2-user@PUBLIC-IP-ADDRESS ~]$ cowsay HELLO WORLD!
 ```
 
 - In order to be able to create an EC2 instance across AWS regions, a valid AMI id should be passed to the script. This could be easily achieved by using a [Data Source Configuration](https://www.terraform.io/docs/configuration/data-sources.html) in HCL format, which will search and filter for a specific pattern in the AMI name that can match across regions. Hashicorp has multiple known issues when working with Data Sources in json format. Example: [#13037](https://github.com/hashicorp/terraform/issues/13037). This is expected to be fixed until [version 0.12](https://www.hashicorp.com/blog/terraform-0-12-reliable-json-syntax) is released. Because of that, I decided to get a list of valid AMI ids via AWS CLI for all regions (see: `AWS CLI scripts/aws_valid_amis.sh`) and create a map variable in Terraform that will be passed to the TF template depending on the selected AWS region.
