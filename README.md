@@ -1,4 +1,4 @@
-# Devops POC - Infra as code using TF and Python.
+# DevOps POC - Infra as code using TF and Python.
 
 ## Description
 
