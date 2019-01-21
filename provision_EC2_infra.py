@@ -41,14 +41,13 @@ def updateJsonTemplates(awsInstanceType, region):
     return
 
 # A function to retrieve EC2 running instances.
-def getAWSRunningInstances():
+def getAWSRunningInstances(region):
 
-    client = boto3.client('ec2')
+    session = boto3.Session()
+    ec2 = session.resource('ec2', region)
 
     instances = []
-    for region in client.describe_regions()['Regions']:
-        ec2 = boto3.resource('ec2', region_name=region['RegionName'])
-        result = ec2.instances.filter(Filters=[{'Name': 'instance-state-name', 'Values': ['running']}])
+    result = ec2.instances.filter(Filters=[{'Name': 'instance-state-name', 'Values': ['running']}])
     for instance in result:
         instances.append(instance.id)
 
@@ -76,4 +75,4 @@ if __name__ == '__main__':
     tf_init = 'cd terraform/ && terraform init -input=false && terraform plan -out=tfplan -input=false && terraform apply -input=false tfplan'
     os.system(tf_init)
 
-    getAWSRunningInstances()
+    getAWSRunningInstances(args.region)
