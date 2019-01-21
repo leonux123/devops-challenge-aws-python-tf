@@ -19,7 +19,7 @@ The script will create an EC2 instance (using Terraform) in the specified AWS Re
 
 ## Pre-requisites
 
-- Create security group in AWS to allow SSH access (port 22) for all regions.
+- [Create security group](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-network-security.html#creating-security-group) in AWS to allow SSH access (port 22) for all regions.
 - Import your [public key](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html#how-to-generate-your-own-key-and-import-it-to-aws) for all AWS regions. Use this script: `AWS CLI scripts/aws_import_keys.sh`
 
 
