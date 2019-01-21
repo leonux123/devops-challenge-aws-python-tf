@@ -89,7 +89,7 @@ Note: Only Free tier instance types are allowed: **t1.micro**, **t2.micro**.
 
 ## Notes
 
-- I'm using Boto3 library to retrieve all EC2 running instances and displaying that to the terminal. That way you can make sure that the new instance was actually created, by comparing Terraform output vs AWS CLI information.
+- I'm using Boto3 library to retrieve all EC2 running instances for the selected AWS region, and displaying that to the terminal. That way you can make sure that the new instance was actually created, by comparing Terraform output vs AWS CLI information.
 
 - The script will also display to the terminal the public IP address of the new created EC2 instance via Terraform output. You can SSH to that IP address and validate that "cowsay" was installed during launch process.
 ```
