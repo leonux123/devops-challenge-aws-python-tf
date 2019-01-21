@@ -33,7 +33,7 @@ def updateJsonTemplates(awsInstanceType, region):
     with open('terraform.template', 'r') as file:
          json_data = json.load(file, object_pairs_hook=OrderedDict)
          for item in json_data:
-               if item['resource']['aws_instance']['myNode']['ami'] in ["${var.ami_id[\"us-west-2\"]}"]:
+               if item['resource']['aws_instance']['myNode']['ami'] in ["${var.ami_id[\"us-east-1\"]}"]:
                   item['resource']['aws_instance']['myNode']['ami'] = '${var.ami_id[\"'+region+'\"]}'
     with open('out_tftemplate.json', 'w') as file:
         json.dump(json_data, file, sort_keys=False, indent=2)
