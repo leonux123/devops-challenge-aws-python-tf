@@ -76,11 +76,13 @@ The script expects 2 arguments: EC2 Instance Type (required), AWS Region (option
 
 Valid scenarios:
 
+- Example 1
 ```bash
 $ ./provision_EC2_infra.py t2.micro
 ```
 Note: If AWS Region is missing, it will be defaulted to: **us-east-1**.
 
+- Example 2
 ```bash
 $ ./provision_EC2_infra.py t2.micro -r us-west-2
 ```
